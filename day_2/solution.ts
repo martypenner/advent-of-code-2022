@@ -1,6 +1,8 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
+let input = fs.readFileSync(path.resolve(__dirname, './input.prod'), 'utf8');
+
 const ROUND_POINTS = {
   win: 6,
   draw: 3,
@@ -28,8 +30,6 @@ const RULES = {
   CX: 'win',
   CY: 'lose',
 };
-
-let input = fs.readFileSync(path.resolve(__dirname, './input.prod'), 'utf8');
 
 let rounds = input.split('\n').filter(Boolean);
 let totalScore = 0;
