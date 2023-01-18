@@ -25,7 +25,6 @@ let rucksacks = input.split('\n').filter(Boolean);
 
 let totalSum = 0;
 for (let i = 0; i <= rucksacks.length - 3; i += 3) {
-  let groupIndex = i % 3;
   let sacks = [new Set(rucksacks[i]), new Set(rucksacks[i + 1]), new Set(rucksacks[i + 2])];
   let commonItem = [...sacks[0]].filter((x) => sacks[1].has(x) && sacks[2].has(x));
   let charCode = Array.from(commonItem)[0].charCodeAt(0);
